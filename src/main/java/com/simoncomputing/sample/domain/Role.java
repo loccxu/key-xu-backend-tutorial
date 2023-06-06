@@ -72,6 +72,4 @@ public class Role {
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
 	}
-
-    // Getters and setters go here.
 }

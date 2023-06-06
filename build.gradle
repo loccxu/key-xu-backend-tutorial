@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.3.0.RELEASE") 
     }
 }
 
@@ -37,4 +37,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.liquibase:liquibase-core")
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
 }
