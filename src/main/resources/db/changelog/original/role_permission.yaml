@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Generated
+      changes: 
+        - createTable:
+            tableName: role_permission
+            columns: 
+              - column:
+                  name: role_id 
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_role_permission_role_id
+                    references: role(id)
+                    deleteCascade: true
+              - column:
+                  name: permission_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_role_permission_permission_id
+                    references: permission(id)
+                    deleteCascade: true
+                    
+  - changeSet:
+      id: 2
+      author: Generated
+      changes:
+        - insert:
+            tableName: role_permission
+            columns:
+              - column:
+                  name: role_id
+                  value: 1
+              - column:
+                  name: permission_id
+                  value: 1

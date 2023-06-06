@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Generated
+      changes:
+        - createTable:
+            tableName: permission
+            columns: 
+              - column:
+                  name: id 
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+
+  - changeSet:
+      id: 2
+      author: Generated
+      changes:
+        - insert:
+           tableName: permission
+           columns:
+             - column:
+                 name: id
+                 value: 1
+             - column:
+                 name: name
+                 value: API_ALL
+             - column:
+                 name: description
+                 value: Allows access to all APIs

@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/original/user.yaml
+  - include:
+      file: db/changelog/original/role.yaml
+  - include:
+      file: db/changelog/original/permission.yaml
+  - include:
+      file: db/changelog/original/role_permission.yaml
+  - include:
+      file: db/changelog/original/user_role.yaml
