@@ -15,26 +15,26 @@ import com.simoncomputing.sample.dto.PermissionDto;
 import com.simoncomputing.sample.dto.RoleDto;
 
 @Transactional
-@RunWith(SpringRunner.class)  
+@RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class RoleServiceTest {
 
     @Autowired
     RoleService roleService;
-    
+
     @Autowired
     PermissionService permissionService;
-    
+
     private PermissionDto loginPermission;
     private PermissionDto viewProfilePermission;
-    
+
     @Before
     public void setup() {
         PermissionDto dto = new PermissionDto();
         dto.setName("LOGIN");
         dto.setDescription("Can login");
         loginPermission = permissionService.create(dto);
-        
+
         dto = new PermissionDto();
         dto.setName("VIEW_PROFILE");
         dto.setDescription("Can view user profile");
@@ -47,7 +47,7 @@ public class RoleServiceTest {
         roleDto.setDescription("Standard user");
         roleDto.getPermissionIds().add(loginPermission.getId());
         roleDto.getPermissionIds().add(viewProfilePermission.getId());
-        
+
         return roleDto;
     }
 
@@ -56,7 +56,7 @@ public class RoleServiceTest {
         assertEquals(expected.getDescription(), actual.getDescription());
         assertEquals(expected.getPermissionIds(), actual.getPermissionIds());
     }
-    
+
     // ...
 
     @Test
@@ -70,7 +70,7 @@ public class RoleServiceTest {
         dto.setDescription("User who can login");
         dto.getPermissionIds().remove(viewProfilePermission.getId());
         RoleDto result = roleService.update(dto);
-        
+
         // Assert
         assertMatches(dto, result);
     }

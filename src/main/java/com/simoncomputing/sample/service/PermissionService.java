@@ -75,7 +75,7 @@ public class PermissionService {
     		throw new NotFoundException("Permission not found");
     	}
     	PermissionDto dto = new PermissionDto();
-        BeanUtils.copyProperties(permission, dto);
+        BeanUtils.copyProperties(permission.get(), dto);
         return dto;
     }
     
@@ -85,11 +85,12 @@ public class PermissionService {
     		throw new NotFoundException("Permission not found");
     	}
     	PermissionDto dto = new PermissionDto();
-        BeanUtils.copyProperties(permission, dto);
+        BeanUtils.copyProperties(permission.get(), dto);
         return dto;
     }
         
     public void deleteById(Long id) {
+        Optional<Permission> permission = dao.findById(id);
     	if (!dao.existsById(id)) {
     		throw new NotFoundException("Permission not found");
     	}
