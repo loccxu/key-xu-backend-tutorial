@@ -1,37 +1,37 @@
 databaseChangeLog:
   - changeSet:
-      id: "1"
+      id: 1
       author: Generated
       changes: 
         - createTable:
-            tableName: user_role
+            tableName: users_role
             columns: 
               - column:
-                  name: user_id 
+                  name: users_id 
                   type: bigint
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_user_role_user_id
-                    references: user(id)
+                    foreignKeyName: fk_users_role_users_id
+                    references: users(id)
                     deleteCascade: true
               - column:
                   name: role_id
                   type: bigint
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_user_role_role_id
+                    foreignKeyName: fk_users_role_role_id
                     references: role(id)
                     deleteCascade: true
   - changeSet:
-      id: "2"
+      id: 2
       author: Generated
       changes:
         - insert:
-            tableName: user_role
+            tableName: users_role
             columns:
               - column:
-                  name: user_id
-                  value: "1"
+                  name: users_id
+                  value: 1
               - column:
                   name: role_id
-                  value: "1"
+                  value: 1

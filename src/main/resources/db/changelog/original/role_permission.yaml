@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: "1"
+      id: 1
       author: Generated
       changes: 
         - createTable:
@@ -24,7 +24,7 @@ databaseChangeLog:
                     deleteCascade: true
                     
   - changeSet:
-      id: "2"
+      id: 2
       author: Generated
       changes:
         - insert:
@@ -32,7 +32,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: role_id
-                  value: "1"
+                  value: 1
               - column:
                   name: permission_id
-                  value: "1"
+                  value: 1

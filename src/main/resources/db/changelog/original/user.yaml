@@ -4,7 +4,7 @@ databaseChangeLog:
       author: Generated
       changes:      
         - createTable:
-            tableName: user
+            tableName: users
             columns:
               - column:
                   name: id
@@ -35,7 +35,7 @@ databaseChangeLog:
       author: Generated
       changes: 
         - insert:
-            tableName: user
+            tableName: users
             columns:
               - column:
                   name: id
